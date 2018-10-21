@@ -40,19 +40,18 @@ function newGame() {
     }
 
     //Write to DOM
-    currentWord.textContent = pickedWordPlaceholder;
+    currentWord.textContent = pickedWordPlaceholder.join(" ");
     guesses.textContent = guessesRemaining;
     winCount.textContent = wins;
     lossCount.textContent = losses;
 }
 
-//onkeyup for letter guesses
 
 
 //Letter Guess Function
-function letterGuess() {
-    if (gameRunning === true && userGuess !== guessed) {
-
+function letterGuess(guess) {
+    if (gameRunning === true && guessedLetters !== guess) {
+        guessedLetters.push(guess);
     }
 }
 
@@ -75,4 +74,7 @@ function winChecker() {
 document.addEventListener(onkeyup, newGame());
 
 //onkeyup for letter guesses
-var userGuess = event.key
+document.onkeyup = function(event) {
+    letterGuess(event.key);
+    // console.log(letterGuess);
+}
