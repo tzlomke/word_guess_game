@@ -101,8 +101,9 @@ document.onkeypress = function () {
 }
 
 //onkeyup for letter guesses
-document.onkeyup = function(event) {
-    if (event.keyCode >= 65 && event.keyCode <= 90)
-    choice(event.key);
+document.onkeydown = function(event) {
+    if (event.keyCode >= 65 && event.keyCode <= 90 && gameRunning === true) {
+        choice(event.key);
+    }
 }
 
