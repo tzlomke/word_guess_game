@@ -27,7 +27,7 @@ function newGame() {
     pickedWordPlaceholder = [];
     incorrectLetters = [];
 
-    //Pick a word
+    //Pick a word from array
     pickedWord = wordBank[Math.floor(Math.random() * wordBank.length)];
 
     //Placeholder creation
@@ -38,6 +38,7 @@ function newGame() {
             pickedWordPlaceholder.push("_");
         }
     }
+    console.log(pickedWord)
 
     //Write to DOM
     currentWord.textContent = pickedWordPlaceholder.join(" ");
@@ -47,13 +48,15 @@ function newGame() {
 }
 
 
-
 //Letter Guess Function
-function letterGuess(guess) {
-    if (gameRunning === true && guessedLetters !== guess) {
-        guessedLetters.push(guess);
+function letterGuess(userChoice) {
+    if (gameRunning === true && userChoice === guessedLetters[-1]) {
+        guessedLetters.push(userChoice);
+        console.log(userChoice);
     }
 }
+console.log(guessedLetters)
+
 
 //Incorrect Checker
 function incorrectGuessCheck() {
@@ -75,6 +78,5 @@ document.addEventListener(onkeyup, newGame());
 
 //onkeyup for letter guesses
 document.onkeyup = function(event) {
-    letterGuess(event.key);
-    // console.log(letterGuess);
+    userChoice = event.key;
 }
