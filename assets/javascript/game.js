@@ -49,8 +49,9 @@ function newGame() {
 }
 
 
-//Guess Function
+//Game Logic
 function choice(letter) {
+    //Correct Guess Checker
     if (gameRunning === true && previouslyGuessed.indexOf(letter) === -1) {
         previouslyGuessed.push(letter);
         for (var i = 0; i < pickedWord.length; i++) {
@@ -58,26 +59,33 @@ function choice(letter) {
                 pickedWordPlaceholder[i] = pickedWord[i];
             }
         }
+        
         currentWord.textContent = pickedWordPlaceholder.join(" ");
     } else if (gameRunning === true) {
         alert("You've already used this letter.")
     }
-    lettersGuessed.append(letter + ", ");
+    
+    //Incorrect Guess Checker
     if (pickedWordPlaceholder.indexOf(letter) === -1) {
         guessesRemaining --;
         console.log(guessesRemaining);
+        guesses.textContent = guessesRemaining;
+        lettersGuessed.append(letter + ", ");
+    }   
+    
+    //Loss Checker
+    if (guessesRemaining === 0) {
+        alert("You lost! Try again!");
+        newGame();
+        lossCount ++;
     }
-
-}
-
-//Loss Checker
-function lossChecker() {
-
-}
-
-//Win Checker
-function winChecker() {
-
+    
+    //Win Checker
+    if (pickedWord === pickedWordPlaceholder) {
+        alert("You've won! Let's go again!");
+        newGame();
+        winCount ++;
+    }
 }
 
 //Start Game
