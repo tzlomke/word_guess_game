@@ -1,5 +1,10 @@
 /* Import Google Font */
-@import url("//fonts.googleapis.com/css?family=Indie+Flower|Special+Elite");
+@font-face {
+    font-family: 'Indie Flower';
+    src: url('../../../word_guess_game/assets/fonts/Indie_Flower/IndieFlower.ttf') format('truetype');
+    font-family: 'Special Elite';
+    src: url('../../../word_guess_game/assets/fonts/Special_Elite/SpecialElite-Regular.ttf') format('truetype');
+}
 
 /* General */
 body {
