@@ -72,7 +72,7 @@ function choice(letter) {
     
     //Loss Checker
     if (guessesRemaining === 0) {
-        alert("You lost! Try again!");
+        confirm("You lost! Want to try again!");
         newGame();
         losses ++;
         lossCount.textContent = losses;
@@ -80,8 +80,8 @@ function choice(letter) {
     }
     
     //Win Checker
-    if (pickedWordPlaceholder.join(" ") === currentWord) {
-        alert("You've won! Let's go again!");
+    if (pickedWordPlaceholder.join("") === pickedWord) {
+        confirm("You've won! Want to go again?");
         newGame();
         wins ++;
         winCount.textContent = wins;
