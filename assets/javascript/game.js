@@ -72,20 +72,20 @@ function choice(letter) {
     
     //Loss Checker
     if (guessesRemaining === 0) {
-        confirm("You lost! Want to try again!");
+        confirm("You lost! Want to try again?");
         newGame();
         losses ++;
         lossCount.textContent = losses;
-        lettersGuessed.remove();
+        lettersGuessed.textContent = "";
     }
     
     //Win Checker
     if (pickedWordPlaceholder.join("") === pickedWord) {
-        confirm("You've won! Want to go again?");
+        confirm("You won! Want to go again?");
         newGame();
         wins ++;
         winCount.textContent = wins;
-        lettersGuessed.remove();
+        lettersGuessed.textContent = "";
     }
 }
 
