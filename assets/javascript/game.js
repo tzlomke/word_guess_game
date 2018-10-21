@@ -17,9 +17,6 @@ var pickedWordPlaceholder = [];
 var previouslyGuessed = [];
 var incorrectLetters = [];
 
-
-
-
 //New Game Function
 function newGame() {
     gameRunning = true;
@@ -42,7 +39,7 @@ function newGame() {
     console.log(pickedWord)
 
     //Write to DOM
-    currentWord.textContent = pickedWordPlaceholder;
+    currentWord.textContent = pickedWordPlaceholder.join(" ");
     guesses.textContent = guessesRemaining;
     winCount.textContent = wins;
     lossCount.textContent = losses;
@@ -79,14 +76,16 @@ function choice(letter) {
         newGame();
         losses ++;
         lossCount.textContent = losses;
+        lettersGuessed.remove();
     }
     
     //Win Checker
-    if (pickedWord === pickedWordPlaceholder) {
+    if (pickedWordPlaceholder.join(" ") === currentWord) {
         alert("You've won! Let's go again!");
         newGame();
         wins ++;
         winCount.textContent = wins;
+        lettersGuessed.remove();
     }
 }
 
