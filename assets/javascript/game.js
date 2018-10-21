@@ -7,11 +7,11 @@ var lossCount = document.getElementById("loss-count");
 
 
 //Global Variables
-var wordBank = ["lcd soundsystem", "the strokes", "yeah yeah yeahs", "tv on the radio", "the national", "interpol", "vampire weekend", ];
+var wordBank = ["Pam", "Jim", "Michael", "Dwight", "Angela", "Kevin", "Oscar", "Kelly", "Ryan", "Darryl", "Stanley", "Toby", "Meredith", "Creed", "Phyllis"];
 var wins = 0;
 var losses = 0;
 var pickedWord = "";
-var guessesRemaining = 10;
+var guessesRemaining = 9;
 var gameRunning = false;
 var pickedWordPlaceholder = [];
 var previouslyGuessed = [];
@@ -20,7 +20,7 @@ var incorrectLetters = [];
 //New Game Function
 function newGame() {
     gameRunning = true;
-    guessesRemaining = 10;
+    guessesRemaining = 9;
     previouslyGuessed = [];
     pickedWordPlaceholder = [];
     incorrectLetters = [];
@@ -37,7 +37,6 @@ function newGame() {
         }
     }
     console.log(pickedWord)
-    console.log(pickedWordPlaceholder)
 
     //Write to DOM
     currentWord.textContent = pickedWordPlaceholder.join(" ");
@@ -54,14 +53,14 @@ function choice(letter) {
     if (gameRunning === true && previouslyGuessed.indexOf(letter) === -1) {
         previouslyGuessed.push(letter);
         for (var i = 0; i < pickedWord.length; i++) {
-            if (pickedWord[i] === letter) {
+            if (pickedWord[i].toLowerCase() === letter.toLowerCase()) {
                 pickedWordPlaceholder[i] = pickedWord[i];
             }
         }
         
         currentWord.textContent = pickedWordPlaceholder.join(" ");
     } else if (gameRunning === true) {
-        alert("You've already used this letter.")
+        alert("You've already used this letter.");
     }
     
     // Incorrect Guess Checker
@@ -70,7 +69,7 @@ function choice(letter) {
             incorrectLetters.push(letter);
             guessesRemaining --;
         }   
-        lettersGuessed.textContent = incorrectLetters.join(" ")
+        lettersGuessed.textContent = incorrectLetters.join(" ");
         guesses.textContent = guessesRemaining;
     }
     
