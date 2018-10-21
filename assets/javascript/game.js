@@ -77,14 +77,16 @@ function choice(letter) {
     if (guessesRemaining === 0) {
         alert("You lost! Try again!");
         newGame();
-        lossCount ++;
+        losses ++;
+        lossCount.textContent = losses;
     }
     
     //Win Checker
     if (pickedWord === pickedWordPlaceholder) {
         alert("You've won! Let's go again!");
         newGame();
-        winCount ++;
+        wins ++;
+        winCount.textContent = wins;
     }
 }
 
