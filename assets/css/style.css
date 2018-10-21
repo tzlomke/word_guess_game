@@ -1,0 +1,39 @@
+/* Nametag */
+.tag {
+    border-radius: 20px;
+    border: 2px solid blue;
+    width: 400px;
+    height: 250px;
+  }
+  
+  header {
+    background: blue;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 2px;
+  }
+  
+  .hello {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 60px;
+    color: white;
+  }
+  
+  .mynameis {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .dottedline {
+      display: block;
+      text-align: center;
+      font-size: 20px;
+  }
+
+  .title {
+      text-align: center;
+  }

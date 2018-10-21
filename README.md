@@ -2,7 +2,7 @@
 
 A simple word guess game with an Office theme...
 
-It's time for the Dundie Awards. For some reason, even though everyone has worked in the same office for a decade or more, Michael has decided everybody needs a name tag.
+It's time for the Dundie Awards. For some reason, even though everyone has worked in the same office forever, Michael has decided name tags are imperative.
 
 You've got 9 guesses to fill in the name tags correctly.
 

@@ -4,31 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>The Office Word Guessing Game</title>
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="header">
-        <header>
-            <h1>The Dundie Awards</h1>
-        </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron jumbotron-fluid px-0">
+                    <div class="container">
+                        <h1 class="display-4 title">The Dundies</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <br>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-4">
+                <section>
+                    <h4>Press any key to start!</h4>
+                    <br>
+                    <h2>Fill in the name tag</h2>
+                    <br>
+                    <h2>Guesses Remaining: <span id="guesses"></span></h2>
+                    <h2>Incorrect Letters Guessed:</h2>
+                    <h3><span id="letters-guessed"></span></h3>
+                    <br>
+                    <h2>Wins: <span id="win-count"></span></h2>
+                    <h2>Losses: <span id="loss-count"></span></h2>
+                </section>
+            </div>
+
+            <div class="col-4">
+                <br>
+                <div class="tag">
+                    <header>
+                        <div class="hello">
+                            HELLO
+                        </div>
+                    </header>
+                    <div class="mynameis">
+                        my name is
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="dottedline">
+                                    <span id="current-word">_______</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+            </div>
+
+        </div>
+    </div>
 
     <div class="main-container">
-        <section>
-            <h4>Press any key to start!</h4>
-            <br>
-            <h2>Fill in the name tag: <span id="current-word">_______</span></h2>
-            <br>
-            <h2>Guesses Remaining: <span id="guesses"></span></h2>
-            <h3>Incorrect Letters Guessed: <span id="letters-guessed"></span></h3>
-            <br>
-            <h2>Wins: <span id="win-count"></span></h2>
-            <h2>Losses: <span id="loss-count"></span></h2>
-        </section>
+        
     </div>
 
     <script src="assets/javascript/game.js"></script>
