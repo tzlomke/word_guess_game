@@ -7,7 +7,7 @@ var lossCount = document.getElementById("loss-count");
 
 
 //Global Variables
-var wordBank = ["lcd soundsystem", "the strokes", "yeah yeah yeahs", "tv on the radio", "the national", "interpol", "vampire weekend",];
+var wordBank = ["lcd soundsystem", "the strokes", "yeah yeah yeahs", "tv on the radio", "the national", "interpol", "vampire weekend", ];
 var wins = 0;
 var losses = 0;
 var pickedWord = "";
@@ -18,21 +18,42 @@ var guessedLetters = [];
 var incorrectLetters = [];
 
 
+
+//New Game Function
 function newGame() {
     gameRunning = true;
     guessesRemaining = 10;
     guessedLetters = [];
-    pickedWordPlaceholder: [];
+    pickedWordPlaceholder = [];
     incorrectLetters = [];
-    
-    //pick a word
-    pickedWord = wordBank[Math.floor(Math.random)() * wordBank.length]
+
+    //Pick a word
+    pickedWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+
+    //Placeholder creation
+    for (var i = 0; i < pickedWord.length; i++) {
+        if (pickedWord[i] === " ") {
+            pickedWordPlaceholder.push(" ");
+        } else {
+            pickedWordPlaceholder.push("_");
+        }
+    }
+
+    //Write to DOM
+    currentWord.textContent = pickedWordPlaceholder;
+    guesses.textContent = guessesRemaining;
+    winCount.textContent = wins;
+    lossCount.textContent = losses;
 }
+
+//onkeyup for letter guesses
 
 
 //Letter Guess Function
 function letterGuess() {
+    if (gameRunning === true && userGuess !== guessed) {
 
+    }
 }
 
 //Incorrect Checker
@@ -51,15 +72,7 @@ function winChecker() {
 }
 
 //New Game Event Listner
-
+document.addEventListener(onkeyup, newGame());
 
 //onkeyup for letter guesses
-
-//Placeholder Creation
-for (var i = 0; i < pickedWord.length; i++) {
-    if (pickedWord[i] === " ") {
-        pickedWordPlaceholder.push(" ");
-    } else {
-        pickedWordPlaceholder.push("_");
-    }
-}
+var userGuess = event.key
