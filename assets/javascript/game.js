@@ -37,6 +37,7 @@ function newGame() {
         }
     }
     console.log(pickedWord)
+    console.log(pickedWordPlaceholder)
 
     //Write to DOM
     currentWord.textContent = pickedWordPlaceholder.join(" ");
@@ -48,6 +49,7 @@ function newGame() {
 
 //Game Logic
 function choice(letter) {
+
     //Correct Guess Checker
     if (gameRunning === true && previouslyGuessed.indexOf(letter) === -1) {
         previouslyGuessed.push(letter);
@@ -67,25 +69,27 @@ function choice(letter) {
         guessesRemaining --;
         console.log(guessesRemaining);
         guesses.textContent = guessesRemaining;
-        lettersGuessed.append(letter + ", ");
+        lettersGuessed.append(letter + " ");
     }   
     
     //Loss Checker
     if (guessesRemaining === 0) {
-        confirm("You lost! Want to try again?");
-        newGame();
-        losses ++;
-        lossCount.textContent = losses;
-        lettersGuessed.textContent = "";
+        if (confirm("You lost! Want to try again?")) {
+            newGame();
+            losses ++;
+            lossCount.textContent = losses;
+            lettersGuessed.textContent = "";
+        }   
     }
     
     //Win Checker
     if (pickedWordPlaceholder.join("") === pickedWord) {
-        confirm("You won! Want to go again?");
-        newGame();
-        wins ++;
-        winCount.textContent = wins;
-        lettersGuessed.textContent = "";
+        if (confirm("You won! Want to go again?")) {
+            newGame();
+            wins ++;
+            winCount.textContent = wins;
+            lettersGuessed.textContent = "";
+        }
     }
 }
 
