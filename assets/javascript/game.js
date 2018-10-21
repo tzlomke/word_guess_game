@@ -18,69 +18,78 @@ var guessedLetters = [];
 var incorrectLetters = [];
 
 
-document.onkeyup = function (event) {
-    
-    //New Game Function
-    function newGame() {
-        gameRunning = true;
-        guessesRemaining = 10;
-        guessedLetters = [];
-        pickedWordPlaceholder = [];
-        incorrectLetters = [];
-
-        //Pick a word from array
-        pickedWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-
-        //Placeholder creation
-        for (var i = 0; i < pickedWord.length; i++) {
-            if (pickedWord[i] === " ") {
-                pickedWordPlaceholder.push(" ");
-            } else {
-                pickedWordPlaceholder.push("_");
-            }
-        }
-        console.log(pickedWord)
-
-        //Write to DOM
-        currentWord.textContent = pickedWordPlaceholder.join(" ");
-        guesses.textContent = guessesRemaining;
-        winCount.textContent = wins;
-        lossCount.textContent = losses;
-    }
 
 
-    //Guess Function
-    function choice(letter) {
-        console.log(letter);
-        if (guessedLetters.indexOf(letter) === -1) {
-            guessedLetters.push(letter);
-            for (var i = 0; i < pickedWord.length; i++) {
-                if (letter === pickedWord[i]) {
-                    pickedWordPlaceholder[i] === pickedWord[i];
-                }
-            }
-            currentWord.textContent = pickedWordPlaceholder.join(" ")
+//New Game Function
+function newGame() {
+    gameRunning = true;
+    guessesRemaining = 10;
+    guessedLetters = [];
+    pickedWordPlaceholder = [];
+    incorrectLetters = [];
+
+    //Pick a word from array
+    pickedWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+
+    //Placeholder creation
+    for (var i = 0; i < pickedWord.length; i++) {
+        if (pickedWord[i] === " ") {
+            pickedWordPlaceholder.push(" ");
         } else {
-            alert("You've already used this letter.")
+            pickedWordPlaceholder.push("_");
         }
     }
+    console.log(pickedWord)
+
+    //Write to DOM
+    currentWord.textContent = pickedWordPlaceholder.join(" ");
+    guesses.textContent = guessesRemaining;
+    winCount.textContent = wins;
+    lossCount.textContent = losses;
+}
 
 
-    //Incorrect Checker
-    function incorrectGuessCheck() {
-
+//Guess Function
+function choice(letter) {
+    console.log(letter);
+    if (guessedLetters.indexOf(letter) === -1) {
+        guessedLetters.push(letter);
+        for (var i = 0; i < pickedWord.length; i++) {
+            if (letter === pickedWord[i]) {
+                pickedWordPlaceholder[i] === pickedWord[i];
+            }
+        }
+        currentWord.textContent = pickedWordPlaceholder.join(" ")
+    } else {
+        alert("You've already used this letter.")
     }
+}
 
-    //Loss Checker
-    function lossChecker() {
 
+//Incorrect Checker
+function incorrectGuessCheck() {
+
+}
+
+//Loss Checker
+function lossChecker() {
+
+}
+
+//Win Checker
+function winChecker() {
+
+}
+
+//Start Game
+document.onkeypress = function (event) {
+    if (gameRunning === false) {
+        newGame();
     }
+}
 
-    //Win Checker
-    function winChecker() {
-
-    }
-
-    //onkeyup for letter guesses
+//onkeyup for letter guesses
+document.onkeyup = function(event) {
     var userChoice = event.key;
+    console.log(userChoice);
 }
