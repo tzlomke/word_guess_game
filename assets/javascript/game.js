@@ -7,7 +7,7 @@ var lossCount = document.getElementById("loss-count");
 
 
 //Global Variables
-var wordBank = ["Pam", "Jim", "Michael", "Dwight", "Angela", "Kevin", "Oscar", "Kelly", "Ryan", "Darryl", "Stanley", "Toby", "Meredith", "Creed", "Phyllis"];
+var wordBank = ["Pam", "Jim", "Michael", "Dwight", "Angela", "Kevin", "Oscar", "Kelly", "Ryan", "Darryl", "Stanley", "Toby", "Meredith", "Creed", "Phyllis", "Andy", "Erin"];
 var wins = 0;
 var losses = 0;
 var pickedWord = "";
@@ -60,7 +60,7 @@ function choice(letter) {
         
         currentWord.textContent = pickedWordPlaceholder.join(" ");
     } else if (gameRunning === true) {
-        alert("You've already used this letter.");
+        alert("You've already used this letter, you ignorant slut.");
     }
     
     // Incorrect Guess Checker
@@ -75,7 +75,7 @@ function choice(letter) {
     
     //Loss Checker
     if (guessesRemaining === 0) {
-        if (confirm("You lost! Want to try again?")) {
+        if (confirm("Wrong! Here...have the Extreme Repulsiveness Award. Would you like to try again?")) {
             newGame();
             losses ++;
             lossCount.textContent = losses;
@@ -85,7 +85,7 @@ function choice(letter) {
     
     //Win Checker
     if (pickedWordPlaceholder.join("") === pickedWord) {
-        if (confirm("You won! Want to go again?")) {
+        if (confirm("You've won the Grace Under Fire Award! Want to go again?")) {
             newGame();
             wins ++;
             winCount.textContent = wins;
