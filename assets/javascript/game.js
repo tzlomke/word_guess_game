@@ -62,14 +62,11 @@ function choice(letter) {
     } else if (gameRunning === true) {
         alert("You've already used this letter.")
     }
-    //figure out how to only record letter keys
-    lettersGuessed.append(letter + " ");
-}
-
-
-
-//Incorrect Checker
-function incorrectGuessCheck() {
+    lettersGuessed.append(letter + ", ");
+    if (pickedWordPlaceholder.indexOf(letter) === -1) {
+        guessesRemaining --;
+        console.log(guessesRemaining);
+    }
 
 }
 
@@ -92,6 +89,7 @@ document.onkeypress = function () {
 
 //onkeyup for letter guesses
 document.onkeyup = function(event) {
+    if (event.keyCode >= 65 && event.keyCode <= 90)
     choice(event.key);
 }
 
