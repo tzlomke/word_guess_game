@@ -52,7 +52,7 @@ function newGame() {
 //Guess Function
 function choice(letter) {
     console.log(letter);
-    if (guessedLetters.indexOf(letter) === -1) {
+    if (gameRunning === true && guessedLetters.indexOf(letter) === -1) {
         guessedLetters.push(letter);
         for (var i = 0; i < pickedWord.length; i++) {
             if (letter === pickedWord[i]) {
@@ -90,6 +90,7 @@ document.onkeypress = function (event) {
 
 //onkeyup for letter guesses
 document.onkeyup = function(event) {
-    var userChoice = event.key;
-    console.log(userChoice);
+    choice(event.key);
+    console.log(choice)
 }
+
