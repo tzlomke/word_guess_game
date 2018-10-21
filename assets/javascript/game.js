@@ -42,7 +42,7 @@ function newGame() {
     console.log(pickedWord)
 
     //Write to DOM
-    currentWord.textContent = pickedWordPlaceholder.join(" ");
+    currentWord.textContent = pickedWordPlaceholder;
     guesses.textContent = guessesRemaining;
     winCount.textContent = wins;
     lossCount.textContent = losses;
@@ -58,10 +58,12 @@ function choice(letter) {
                 pickedWordPlaceholder[i] = pickedWord[i];
             }
         }
-        currentWord.textContent = pickedWordPlaceholder.join(" ")
+        currentWord.textContent = pickedWordPlaceholder.join(" ");
     } else if (gameRunning === true) {
         alert("You've already used this letter.")
     }
+    //figure out how to only record letter keys
+    lettersGuessed.append(letter + " ");
 }
 
 
