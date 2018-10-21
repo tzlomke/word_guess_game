@@ -14,7 +14,7 @@ var pickedWord = "";
 var guessesRemaining = 10;
 var gameRunning = false;
 var pickedWordPlaceholder = [];
-var guessedLetters = [];
+var previouslyGuessed = [];
 var incorrectLetters = [];
 
 
@@ -24,7 +24,7 @@ var incorrectLetters = [];
 function newGame() {
     gameRunning = true;
     guessesRemaining = 10;
-    guessedLetters = [];
+    previouslyGuessed = [];
     pickedWordPlaceholder = [];
     incorrectLetters = [];
 
@@ -51,19 +51,19 @@ function newGame() {
 
 //Guess Function
 function choice(letter) {
-    console.log(letter);
-    if (gameRunning === true && guessedLetters.indexOf(letter) === -1) {
-        guessedLetters.push(letter);
+    if (gameRunning === true && previouslyGuessed.indexOf(letter) === -1) {
+        previouslyGuessed.push(letter);
         for (var i = 0; i < pickedWord.length; i++) {
-            if (letter === pickedWord[i]) {
-                pickedWordPlaceholder[i] === pickedWord[i];
+            if (pickedWord[i] === letter) {
+                pickedWordPlaceholder[i] = pickedWord[i];
             }
         }
         currentWord.textContent = pickedWordPlaceholder.join(" ")
-    } else {
+    } else if (gameRunning === true) {
         alert("You've already used this letter.")
     }
 }
+
 
 
 //Incorrect Checker
@@ -82,7 +82,7 @@ function winChecker() {
 }
 
 //Start Game
-document.onkeypress = function (event) {
+document.onkeypress = function () {
     if (gameRunning === false) {
         newGame();
     }
@@ -91,6 +91,5 @@ document.onkeypress = function (event) {
 //onkeyup for letter guesses
 document.onkeyup = function(event) {
     choice(event.key);
-    console.log(choice)
 }
 
