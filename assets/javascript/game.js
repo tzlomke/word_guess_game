@@ -64,13 +64,15 @@ function choice(letter) {
         alert("You've already used this letter.")
     }
     
-    //Incorrect Guess Checker
+    // Incorrect Guess Checker
     if (pickedWordPlaceholder.indexOf(letter) === -1) {
-        guessesRemaining --;
-        console.log(guessesRemaining);
+        if (incorrectLetters.indexOf(letter) === -1) {
+            incorrectLetters.push(letter);
+            guessesRemaining --;
+        }   
+        lettersGuessed.textContent = incorrectLetters.join(" ")
         guesses.textContent = guessesRemaining;
-        lettersGuessed.append(letter + " ");
-    }   
+    }
     
     //Loss Checker
     if (guessesRemaining === 0) {
