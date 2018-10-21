@@ -64,7 +64,7 @@ function choice(letter) {
     }
     
     // Incorrect Guess Checker
-    if (pickedWordPlaceholder.indexOf(letter) === -1) {
+    if (pickedWordPlaceholder.indexOf(letter.toLowerCase()) === -1 && pickedWordPlaceholder.indexOf(letter.toUpperCase())) {
         if (incorrectLetters.indexOf(letter) === -1) {
             incorrectLetters.push(letter);
             guessesRemaining --;
