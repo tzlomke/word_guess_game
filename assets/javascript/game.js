@@ -16,10 +16,6 @@ var pickedWordPlaceholder = [];
 var previouslyGuessed = [];
 var incorrectLetters = [];
 
-//Sounds
-wrongAudio = new Audio('/word_guess_game/assets/sounds/wrong.mp3');
-rightAudio = new Audio('right.mp3');
-
 //New Game Function
 function newGame() {
     gameRunning = true;
@@ -82,7 +78,6 @@ function choice(letter) {
                 losses++;
                 lossCount.textContent = losses;
                 lettersGuessed.textContent = "";
-                wrongAudio.play()
             }
         }, 10);
     }
