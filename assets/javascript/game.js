@@ -72,6 +72,7 @@ function choice(letter) {
 
     //Loss Checker
     if (guessesRemaining === 0) {
+        currentWord.textContent = (pickedWord);
         setTimeout (function () {
             if (confirm("Wrong! Here...have the Extreme Repulsiveness Award. Would you like to try again?")) {
                 newGame();
@@ -98,7 +99,7 @@ function choice(letter) {
 //Start Game
 document.onkeypress = function () {
     if (gameRunning === false) {
-        alert("It's time for the Dundie Awards. For an event of this magnitude, name tags are imperative.")
+        alert("It's time for the Dundie Awards. For an event of this magnitude, name tags are imperative. Make one for everyone on staff.")
         newGame();
     }
 }
