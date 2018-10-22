@@ -1,56 +1,92 @@
-/* Import Google Font */
+/* Import Google Fonts */
 @font-face {
-    font-family: 'Indie Flower';
-    src: url('../../../word_guess_game/assets/fonts/Indie_Flower/IndieFlower.ttf') format('truetype');
-    font-family: 'Special Elite';
-    src: url('../../../word_guess_game/assets/fonts/Special_Elite/SpecialElite-Regular.ttf') format('truetype');
+  font-family: 'Special Elite';
+  src: url('../../../word_guess_game/assets/fonts/Special_Elite/SpecialElite-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Indie Flower';
+  src: url('../../../word_guess_game/assets/fonts/Indie_Flower/IndieFlower.ttf') format('truetype');
 }
 
 /* General */
 body {
-    font-family: 'Special Elite', cursive;
+  font-family: 'Special Elite', cursive;
+}
+
+.main-container {
+  height: 70vh;
+  width: auto;
+  padding-top: 50px;
+  margin-top: 0px;
+  background-image: url('../../assets/images/crinkled_paper.jpg');
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top: groove 2px #cccccc;
+}
+
+/* Jumbotron */
+.header{
+  padding: 0;
+}
+
+.jumbotron {
+  background-image: url('../../assets/images/office_background.png');
+  background-size: fill;
+  background-position: top;
 }
 
 /* Nametag */
 .tag {
-    border-radius: 20px;
-    border: 2px solid blue;
-    width: 400px;
-    height: 250px;
-  }
-  
-  header {
-    background: blue;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    padding: 2px;
-  }
-  
-  .hello {
-    font-family: sans-serif;
-    font-weight: bold;
-    text-align: center;
-    font-size: 60px;
-    color: white;
-  }
-  
-  .mynameis {
-    font-family: sans-serif;
-    font-weight: bold;
-    text-align: center;
-    font-size: 30px;
-  }
+  border-radius: 20px;
+  border: 2px solid blue;
+  width: 400px;
+  height: 250px;
+  background: white;
+}
 
-  .dottedline {
-      display: block;
-      text-align: center;
-      font-size: 40px;
-      font-weight: bold;
-      font-family: 'Indie Flower', !important;
-  }
+header {
+  background: blue;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 2px;
+}
+
+.hello {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+}
+
+.mynameis {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+}
+
+.dottedline {
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Indie Flower' !important;
+}
 
 /* Other Elements */
-  .title {
-      text-align: center;
-      font-size: 80px;
-  }
+.title {
+  text-align: center;
+  font-size: 80px;
+}
+
+.title-2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.text {
+  padding-left: 70px;
+}
