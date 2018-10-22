@@ -16,13 +16,13 @@ body {
 
 .main-container {
   height: 70vh;
-  width: auto;
+  width: 100vw;
   padding-top: 50px;
   margin-top: 0px;
   background-image: url('../../assets/images/crinkled_paper.jpg');
   background-size: auto;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   border-top: groove 2px #cccccc;
 }
 
@@ -89,4 +89,15 @@ header {
 
 .text {
   padding-left: 70px;
+}
+
+/* Small Devices*/
+@media screen and (max-width: 640px) {
+  .main-container {
+    height: 100vh;
+  }
+
+  .text {
+    padding-left: 50px;
+  }
 }
