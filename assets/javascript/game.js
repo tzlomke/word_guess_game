@@ -99,7 +99,7 @@ function choice(letter) {
 //Start Game
 document.onkeypress = function () {
     if (gameRunning === false) {
-        alert("It's time for the Dundie Awards. For an event of this magnitude, name tags are imperative. Make one for everyone on staff.")
+        alert("It's time for the Dundie Awards. For an event of this magnitude, name tags are imperative. Make one for everyone in the office.")
         newGame();
     }
 }
