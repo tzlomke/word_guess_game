@@ -38,7 +38,7 @@ function newGame() {
     console.log(pickedWord)
 
     //Write to DOM
-    currentWord.textContent = pickedWordPlaceholder.join(" ");
+    currentWord.textContent = pickedWordPlaceholder.join("");
     guesses.textContent = guessesRemaining;
     winCount.textContent = wins;
     lossCount.textContent = losses;
@@ -55,7 +55,7 @@ function choice(letter) {
                 pickedWordPlaceholder[i] = pickedWord[i];
             }
         }
-        currentWord.textContent = pickedWordPlaceholder.join(" ");
+        currentWord.textContent = pickedWordPlaceholder.join("");
     } else if (gameRunning === true) {
         alert("You've already used this letter, you ignorant slut.");
     }
@@ -66,13 +66,13 @@ function choice(letter) {
             incorrectLetters.push(letter);
             guessesRemaining--;
         }
-        lettersGuessed.textContent = incorrectLetters.join(" ");
+        lettersGuessed.textContent = incorrectLetters.join("");
         guesses.textContent = guessesRemaining;
     }
 
     //Loss Checker
     if (guessesRemaining === 0) {
-        currentWord.textContent = (pickedWord);
+        currentWord.textContent = pickedWord;
         setTimeout (function () {
             if (confirm("Wrong! Here...have the Extreme Repulsiveness Award. Would you like to try again?")) {
                 newGame();
