@@ -35,7 +35,6 @@ function newGame() {
             pickedWordPlaceholder.push("_");
         }
     }
-    console.log(pickedWord)
 
     //Write to DOM
     currentWord.textContent = pickedWordPlaceholder.join("");
